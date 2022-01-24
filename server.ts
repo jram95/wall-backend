@@ -4,10 +4,6 @@ import cors from "cors";
 import express from "express";
 
 config();
-const app = express();
-
-app.use(express.json());
-app.use(cors);
 
 const herokuSSLSetting = { rejectUnauthorized: false };
 const sslSetting = process.env.LOCAL ? false : herokuSSLSetting;
@@ -16,12 +12,18 @@ const db = {
   ssl: sslSetting,
 };
 
+const app = express();
+
+app.use(express.json());
+app.use(cors);
+
 const client = new Client(db);
 console.log(client);
 client.connect();
 
 app.get("/", (req, res) => {
   console.log("hello");
+  res.send("hello");
 });
 
 app.get<{ id: number }>("/wall/:id", async (req, res) => {
@@ -34,7 +36,6 @@ app.get<{ id: number }>("/wall/:id", async (req, res) => {
     res.status(200).json({ status: "success", data: dbResponse.rows });
   } catch (error) {
     console.error(error);
-  } finally {
   }
 });
 
