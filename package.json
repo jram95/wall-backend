@@ -10,7 +10,8 @@
     "type-check": "tsc --noEmit",
     "start:dev": "LOCAL=true ts-node src/server.ts",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint"
   },
   "author": "your name here",
   "license": "ISC",
