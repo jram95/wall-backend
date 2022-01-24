@@ -9,6 +9,7 @@
     "start": "node dist/server.js",
     "type-check": "tsc --noEmit",
     "start:dev": "LOCAL=true ts-node src/server.ts",
+    "start-heroku:dev": "ts-node src/server.ts",
     "build": "tsc",
     "test": "jest",
     "lint": "eslint"
