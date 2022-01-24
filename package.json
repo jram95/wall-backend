@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "format": "prettier --write server.ts",
-    "format:check": "prettier --check server.ts",
+    "format": "prettier --write src/server.ts",
+    "format:check": "prettier --check src/server.ts",
     "start": "node dist/server.js",
     "type-check": "tsc --noEmit",
-    "start:dev": "LOCAL=true ts-node server.ts",
+    "start:dev": "LOCAL=true ts-node src/server.ts",
     "build": "tsc",
     "test": "jest"
   },

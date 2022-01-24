@@ -15,20 +15,13 @@ const db = {
 const app = express();
 
 app.use(express.json());
-app.use(cors);
+app.use(cors());
 
 const client = new Client(db);
-console.log(client);
 client.connect();
-
-app.get("/", (req, res) => {
-  console.log("hello");
-  res.send("hello");
-});
 
 app.get<{ id: number }>("/wall/:id", async (req, res) => {
   try {
-    console.log("hello");
     const id = req.params.id;
     const dbResponse = await client.query("select * from wall where id = $1", [
       id,
