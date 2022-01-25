@@ -32,6 +32,16 @@ app.get<{ id: number }>("/wall/:id", async (req, res) => {
   }
 });
 
+app.get("/recent-walls", async (req, res) => {
+  try {
+    const dbResponse = await client.query(
+      "select * from wall order by submit_time desc limit 10"
+    );
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.post("/wall", async (req, res) => {
   const {
     user,
