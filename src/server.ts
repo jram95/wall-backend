@@ -26,7 +26,7 @@ app.get<{ id: number }>("/wall/:id", async (req, res) => {
     const dbResponse = await client.query("select * from wall where id = $1", [
       id,
     ]);
-    res.status(200).json({ status: "success", data: dbResponse.rows });
+    res.status(200).json({ status: "success", clues: dbResponse.rows });
   } catch (error) {
     console.error(error);
   }
@@ -37,6 +37,7 @@ app.get("/recent-walls", async (req, res) => {
     const dbResponse = await client.query(
       "select * from wall order by submit_time desc limit 10"
     );
+    res.status(200).json({ status: "success", clues: dbResponse.rows });
   } catch (error) {
     console.error(error);
   }
