@@ -52,4 +52,4 @@ insert into wall (user,
     clue44,
     connection4,
     explanation4) 
-values ('jram95','Ginger', 'Crumb', 'Sporty', 'Entwine', 'Hidden alcohols', 'They contain alcoholic beverage names within them','Twist', 'Weave','Tangle','Lace','Synonym for twist', 'They are all synonyms for each other to mean tangle or weave','Mersey','Wye','Dee','Trent','UK rivers','Rivers in the UK','Craig', 'Connery','Moore','Dalton','James Bond actors','Surnames of actors who played James Bond');
+values ('jram95','Ginger', 'Crumb', 'Sporty', 'Entwine', 'Hidden alcohols', 'They contain alcoholic beverage names within them','Twist', 'Weave','Tangle','Lace','Synonym for twist', 'They are all synonyms for each other to mean tangle or weave','Mersey','Wye','Dee','Trent','UK rivers','Rivers in the UK','Smith', 'Tennant','Eccleston','Whittaker','Doctor Who actors','Surnames of actors who played Doctor Who');
